@@ -1,0 +1,57 @@
+<section>
+    <div data-ng-controller="contactCtrl as vm">
+     <div class="main-container">
+         <p>
+         You simply just have to choose the shift you want in our system. You are going to provide us with few personal details as well as professional background and skills but don't worry, we only want to know how we can use your awesome skills to arrange the best edition of MD festival 
+             eve!!
+         </p>
+         
+         <span>
+         So tell as a bit about yourself filling up the form below:
+         </span>
+  
+         
+         <form role="form" class="input-form" name="contactFrom">
+             <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+    <label for="firstName">First Name</label>
+    <input  type="text" class="form-control input-form-group" id="firstName" name="firstName" 
+           data-ng-model="vm.contact.firstName" required>
+     <div data-ng-if="contactFrom.firstName.$error &&
+                      contactFrom.firstName.$dirty" ng-messages="contactFrom.firstName.$error"  class="error">
+  <div ng-message="required">First name is required</div>
+</div>
+  </div>
+                 </div>
+             
+              <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+    <label for="email">E-mail</label>
+    <input  type="email" class="form-control input-form-group" required id="email" name="email" data-ng-model="vm.contact.email">
+       <div data-ng-if="contactFrom.email.$error &&
+                      contactFrom.email.$dirty" ng-messages="contactFrom.email.$error" class="error">
+  <div ng-message="required">Email is required</div>
+           <div ng-message="email">Enter valid email</div>
+</div>
+  </div>
+  <div class="form-group" style="float:right;">
+    <label for="telephone">Phone Number</label>
+    <input  type="text" class="form-control input-form-group" data-ng-pattern="/^\d{10}$/" id="phone" required ng-minlength="10" ng-maxlength="10"  name="phone" data-ng-model="vm.contact.phone">
+       <div data-ng-if="contactFrom.phone.$error &&
+                      contactFrom.phone.$dirty" ng-messages="contactFrom.phone.$error" class="error">
+  <div ng-message="required">Phone is required</div>
+           <div ng-message="minlength">Phone number should be minimum 10</div>
+           <div ng-message="maxlength">Phone number should be minimum 10</div>
+           <div ng-message="pattern">Enter valid Phone number</div>
+</div>
+  </div>
+                 </div>
+  <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+                 </div>
+             <div style="margin-left: 45%;">
+  <button type="submit" data-ng-click="vm.submit()" ng-disabled="contactFrom.$invalid" class="btn btn-yellow">Submit</button>
+             </div>
+</form>
+</div>
+    </div>
+    </section>

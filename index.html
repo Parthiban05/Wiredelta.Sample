@@ -1,0 +1,39 @@
+<!Doctype html>
+<html ng-app="sampleApp">
+    <head>
+    <title>
+    </title>
+        <link rel="stylesheet" type="text/css" href="content/bootstrap/bootstrap.css" />
+        
+        <link rel="stylesheet" type="text/css" href="content/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="content/style.css" />
+    </head>
+
+<body>
+    
+    <div data-ng-include="'app/layout/layout.html'">
+    </div>
+    
+    <!--scripts declartion-->
+    <script type="text/javascript" src="scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="scripts/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/angular-route.min.js"></script>
+    <script type="text/javascript" src="scripts/angular-messages.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap/bootstrap.min.js"></script>
+    
+    <!--app initialize-->
+    <script  src="app/app.js"></script>
+    
+    <!--route-->
+    <script  src="app/config.route.js"></script>
+    
+    <!--Controllers-->
+    <script type="text/javascript" src="app/volunteer/controller/volunteer.js"></script>
+    <script type="text/javascript" src="app/contact/controller/contact.js"></script>
+    <script type="text/javascript" src="app/layout/controller/navbar.js"></script>
+      <!--Services-->
+    <script type="text/javascript" src="app/volunteer/services/volunteer.js"></script>
+     <script type="text/javascript" src="app/contact/services/contact.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,149 @@
+<section>
+    <div data-ng-controller="volunteerCtrl as vm">
+     <div class="main-container">
+         <p>
+             You simply just have to choose the shift you want in our system. You are going to provide us with few personal details</p>
+         <p>as well as professional background and skills but don't worry, we only want to know how we can use your awesome</p>
+         <p>skills to arrange the best edition of MD festival 
+             ever!!</p>
+         
+         <div style="margin-top:4%;">
+         <span>
+         So tell as a bit about yourself filling up the form below:
+         </span>
+  </div>
+         
+         <form role="form" class="input-form" name="volunteerFrom">
+             <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+    <label for="firstName">First Name</label>
+    <input  type="text" class="form-control input-form-group" id="firstName" name="firstName" 
+           data-ng-model="vm.volunteer.firstName" required>
+     <div data-ng-if="volunteerFrom.firstName.$error &&
+                      volunteerFrom.firstName.$dirty" ng-messages="volunteerFrom.firstName.$error"  class="error">
+  <div ng-message="required">First name is required</div>
+</div>
+  </div>
+  <div class="form-group" style="float:right;">
+    <label for="secondName">Second Name</label>
+    <input  type="text" class="form-control input-form-group" id="secondName" name="secondName" data-ng-model="vm.volunteer.secondName" required>
+      <div data-ng-if="volunteerFrom.secondName.$error &&
+                      volunteerFrom.secondName.$dirty" ng-messages="volunteerFrom.secondName.$error" class="error">
+  <div ng-message="required">Second name is required</div>
+</div>
+  </div>
+                 </div>
+             <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+                  <label for="country" style="float:left;color:white;">Address</label>
+                  <div class="form-group" style="margin-left:70%">
+    <label for="gender">Gender</label>
+                      
+  </div>
+             </div>
+               <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+       <label for="country">Country</label>
+      <select class="form-control input-form-group"  id="country" name="country" style="width:366px;"  data-ng-model="vm.volunteer.country" required> 
+      <option value=""></option>
+          <option value="1">India</option>
+          <option value="2">US</option>
+      </select>
+       <div data-ng-if="volunteerFrom.country.$error &&
+                      volunteerFrom.country.$dirty" ng-messages="volunteerFrom.country.$error" class="error">
+  <div ng-message="required">Country is required</div>
+</div>
+     
+  </div>
+                    <div class="form-group" style="margin-left:63%">
+          <label></label>
+          <div class="radio-inline">
+  <label><input type="radio" name="gender" class="input-form-group" value="1" data-ng-model="vm.volunteer.gender" checked="checked" >M</label>
+</div>
+<div class="radio-inline">
+  <label><input type="radio" class=" input-form-group" name="gender" value="0" data-ng-model="vm.volunteer.gender">F</label>
+</div>
+      
+          </div>
+ 
+                 </div>
+             
+             <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+      <label for="street">Street</label>
+    <input   type="text" class="form-control input-form-group" id="street" required  name="street" data-ng-model="vm.volunteer.street">
+       <div data-ng-if="volunteerFrom.street.$error &&
+                      volunteerFrom.street.$dirty" ng-messages="volunteerFrom.street.$error" class="error">
+  <div ng-message="required">Street is required</div>
+</div>
+  </div>
+                 </div>
+              <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+      <label for="city">City</label>
+    <input   type="text" class="form-control input-form-group" id="city" required name="city" data-ng-model="vm.volunteer.city" style="width:206px;">
+       <div data-ng-if="volunteerFrom.city.$error &&
+                      volunteerFrom.city.$dirty" ng-messages="volunteerFrom.city.$error" class="error">
+  <div ng-message="required">City is required</div>
+</div>
+  </div>
+                  <div class="form-group" style="float:left;">
+                      <label for="zipcode">ZIP Code</label>
+    <input  type="text" class="form-control input-form-group" id="street" data-ng-pattern="/^\d{6}$/" required  name="zipcode" data-ng-model="vm.volunteer.zipcode"
+           style="width:160px;margin-left:5%;">
+                       <div data-ng-if="volunteerFrom.zipcode.$error &&
+                      volunteerFrom.zipcode.$dirty" ng-messages="volunteerFrom.zipcode.$error" class="error">
+  <div ng-message="required">Zipcode is required</div>
+                            <div ng-message="pattern">Enter a valid zipcode</div>
+</div>
+  </div>
+                 </div>
+              <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+    <label for="email">E-mail</label>
+    <input  type="email" class="form-control input-form-group" required id="email" name="email" data-ng-model="vm.volunteer.email">
+       <div data-ng-if="volunteerFrom.email.$error &&
+                      volunteerFrom.email.$dirty" ng-messages="volunteerFrom.email.$error" class="error">
+  <div ng-message="required">Email is required</div>
+           <div ng-message="email">Enter valid email</div>
+</div>
+  </div>
+  <div class="form-group" style="float:right;">
+    <label for="telephone">Telephone No.</label>
+    <input  type="text" class="form-control input-form-group" data-ng-pattern="/^\d{10}$/" id="telephone" required ng-minlength="10" ng-maxlength="10"  name="telephone" data-ng-model="vm.volunteer.telephone">
+       <div data-ng-if="volunteerFrom.telephone.$error &&
+                      volunteerFrom.telephone.$dirty" ng-messages="volunteerFrom.telephone.$error" class="error">
+  <div ng-message="required">Telephone is required</div>
+           <div ng-message="minlength">Telephone number should be minimum 10</div>
+           <div ng-message="maxlength">Telephone number should be minimum 10</div>
+           <div ng-message="pattern">Enter valid telephone number</div>
+</div>
+  </div>
+                 </div>
+  <div style="margin-left: 5%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+    <label for="skills">Skills</label>
+    <div class="checkbox">
+  <label><input type="checkbox" value="" data-ng-model="vm.volunteer.certifiedPlumber">Certified Plumper</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="" data-ng-model="vm.volunteer.carpentaryExperience">Carpentary Experience</label>
+</div>
+  </div>
+  <div class="form-group" style="float:right;">
+    <label for="comments">Comments and other related experience</label>
+    <textarea class="area-form-control" rows="5" id="comment" required name="comments" data-ng-model="vm.volunteer.comments"></textarea>
+       <div data-ng-if="volunteerFrom.comments.$error &&
+                      volunteerFrom.comments.$dirty" ng-messages="volunteerFrom.comments.$error" class="error">
+  <div ng-message="required">Comments is required</div>
+</div>
+  </div>
+                 </div>
+             <div style="margin-left: 45%;margin-right: 5%;" class="col-lg-11">
+  <div class="form-group" style="float:left;">
+    <button  ng-disabled="volunteerFrom.$invalid"   data-ng-click="vm.joinNow()" class="btn btn-yellow">Join Now!</button>
+  </div>
+                 </div>
+</form>
+</div>
+    </div>
+    </section>
